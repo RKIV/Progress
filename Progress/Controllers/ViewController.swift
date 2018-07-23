@@ -20,12 +20,16 @@ class ViewController: UIViewController {
     @IBOutlet weak var startPauseButton: UIButton!
     @IBOutlet weak var taskTimerLabel: UILabel!
     @IBOutlet weak var resetButton: UIButton!
+    
     // MARK: Timers
     var timer = Timer()
 
     // MARK: Booleans
     var timerIsActive = false
     var timerHasBeenReset = true
+    
+    // MARK: Core Data Stuff
+    var currentTimeBlock: TimeBlock?
     
     // MARK: Overrides
     override func viewDidLoad() {
@@ -40,6 +44,7 @@ class ViewController: UIViewController {
     // MARK: IBActions
     @IBAction func startButtonTapped(_ sender: Any) {
         if timerHasBeenReset{
+            currentTimeBlock = CoreDataHelper.newTimeBlock()
             timerHasBeenReset = false
         }
         timerIsActive = !timerIsActive
