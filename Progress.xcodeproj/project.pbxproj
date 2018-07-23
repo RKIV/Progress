@@ -15,6 +15,7 @@
 		FA9D2B7F21064FF4008ED1EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA9D2B7D21064FF4008ED1EE /* LaunchScreen.storyboard */; };
 		FA9D2B8E21066DF4008ED1EE /* TimerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D2B8D21066DF4008ED1EE /* TimerHelper.swift */; };
 		FA9D2B9321067C53008ED1EE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D2B9221067C53008ED1EE /* CoreDataHelper.swift */; };
+		FA9D2B952106868F008ED1EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D2B942106868F008ED1EE /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FA9D2B8021064FF4008ED1EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA9D2B8D21066DF4008ED1EE /* TimerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHelper.swift; sourceTree = "<group>"; };
 		FA9D2B9221067C53008ED1EE /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		FA9D2B942106868F008ED1EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			children = (
 				FA9D2B8D21066DF4008ED1EE /* TimerHelper.swift */,
 				FA9D2B9221067C53008ED1EE /* CoreDataHelper.swift */,
+				FA9D2B942106868F008ED1EE /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -137,6 +140,11 @@
 				TargetAttributes = {
 					FA9D2B6D21064FF2008ED1EE = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -181,6 +189,7 @@
 				FA9D2B8E21066DF4008ED1EE /* TimerHelper.swift in Sources */,
 				FA9D2B7421064FF2008ED1EE /* ViewController.swift in Sources */,
 				FA9D2B7221064FF2008ED1EE /* AppDelegate.swift in Sources */,
+				FA9D2B952106868F008ED1EE /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

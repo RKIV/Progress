@@ -9,20 +9,19 @@
 import Foundation
 
 class TimerHelper{
-    
-    // MARK: Counters
-    static var taskTimeCountSeconds: Double = 0
+    static var taskTimerCountSeconds: Double = 0
     static var taskTimerCountMinutes = 0
     static var taskTimerCountHours = 0
     
     static func updateTimerCount() -> String{
         //Advance count
-        taskTimeCountSeconds += 0.1
-        let flooredSeconds = Int(floor(taskTimeCountSeconds))
+        taskTimerCountSeconds += 0.5
+        var flooredSeconds = Int(floor(taskTimerCountSeconds))
         if flooredSeconds == 60{
-            taskTimeCountSeconds = 0
+            taskTimerCountSeconds = 0
             taskTimerCountMinutes += 1
         }
+        flooredSeconds = flooredSeconds - taskTimerCountMinutes * 60
         if taskTimerCountMinutes == 60{
             taskTimerCountMinutes = 0
             taskTimerCountHours += 1
@@ -45,7 +44,6 @@ class TimerHelper{
     }
     
     static func resetTimer(){
-        taskTimeCountSeconds = 0
         taskTimerCountMinutes = 0
         taskTimerCountHours = 0
     }
