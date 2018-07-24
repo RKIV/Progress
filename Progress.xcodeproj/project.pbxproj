@@ -16,6 +16,8 @@
 		FA9D2B8E21066DF4008ED1EE /* TimerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D2B8D21066DF4008ED1EE /* TimerHelper.swift */; };
 		FA9D2B9321067C53008ED1EE /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D2B9221067C53008ED1EE /* CoreDataHelper.swift */; };
 		FA9D2B952106868F008ED1EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D2B942106868F008ED1EE /* Constants.swift */; };
+		FA9D2B992107A667008ED1EE /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9D2B982107A667008ED1EE /* CloudKit.framework */; };
+		FA9D2BA02107A8DD008ED1EE /* CKTimeBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9D2B9F2107A8DD008ED1EE /* CKTimeBlock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,9 @@
 		FA9D2B8D21066DF4008ED1EE /* TimerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerHelper.swift; sourceTree = "<group>"; };
 		FA9D2B9221067C53008ED1EE /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		FA9D2B942106868F008ED1EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FA9D2B962107A65E008ED1EE /* Progress.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Progress.entitlements; sourceTree = "<group>"; };
+		FA9D2B982107A667008ED1EE /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		FA9D2B9F2107A8DD008ED1EE /* CKTimeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKTimeBlock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA9D2B992107A667008ED1EE /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +54,7 @@
 			children = (
 				FA9D2B7021064FF2008ED1EE /* Progress */,
 				FA9D2B6F21064FF2008ED1EE /* Products */,
+				FA9D2B972107A667008ED1EE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,12 +70,14 @@
 			isa = PBXGroup;
 			children = (
 				FA9D2B7121064FF2008ED1EE /* AppDelegate.swift */,
-				FA9D2B8F21066FC0008ED1EE /* Models */,
+				FA9D2BA12107AA68008ED1EE /* Models */,
+				FA9D2B9E2107A8CF008ED1EE /* Services */,
 				FA9D2B88210659C7008ED1EE /* Helpers */,
 				FA9D2B872106545B008ED1EE /* Storyboards */,
 				FA9D2B862106544C008ED1EE /* Controllers */,
 				FA9D2B7B21064FF4008ED1EE /* Assets.xcassets */,
 				FA9D2B8021064FF4008ED1EE /* Info.plist */,
+				FA9D2B962107A65E008ED1EE /* Progress.entitlements */,
 				FA9D2B7821064FF2008ED1EE /* Progress.xcdatamodeld */,
 			);
 			path = Progress;
@@ -101,7 +110,23 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		FA9D2B8F21066FC0008ED1EE /* Models */ = {
+		FA9D2B972107A667008ED1EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA9D2B982107A667008ED1EE /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA9D2B9E2107A8CF008ED1EE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA9D2B9F2107A8DD008ED1EE /* CKTimeBlock.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA9D2BA12107AA68008ED1EE /* Models */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -142,6 +167,12 @@
 						CreatedOnToolsVersion = 10.0;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
 								enabled = 1;
 							};
 						};
@@ -190,6 +221,7 @@
 				FA9D2B7421064FF2008ED1EE /* ViewController.swift in Sources */,
 				FA9D2B7221064FF2008ED1EE /* AppDelegate.swift in Sources */,
 				FA9D2B952106868F008ED1EE /* Constants.swift in Sources */,
+				FA9D2BA02107A8DD008ED1EE /* CKTimeBlock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +367,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Progress/Progress.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Z8K4BDAJ4;
 				INFOPLIST_FILE = Progress/Info.plist;
@@ -353,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Progress/Progress.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2Z8K4BDAJ4;
 				INFOPLIST_FILE = Progress/Info.plist;
